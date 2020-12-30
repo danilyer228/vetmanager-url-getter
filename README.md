@@ -1,0 +1,1 @@
+Simple package for getting full url by clinic domain name
