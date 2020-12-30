@@ -4,12 +4,12 @@
   "description": "Simple package for getting full url by clinic domain name",
   "main": "index.js",
   "dependencies": {
-    "browserify": "^17.0.0",
-    "https": "^1.0.0",
-    "mocha": "^8.2.1",
     "sync-request": "^6.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^8.2.1",
+    "browserify": "^17.0.0"
+  },
   "scripts": {
     "test": "mocha index.test.js"
   },
