@@ -1,24 +1,11 @@
-const https = require('https')
+var request = require('sync-request');
 
 module.exports = function getVmUrl(domain_name) {
-    const options = {
-        hostname: 'billing-api.vetmanager.cloud',
-        port: 443,
-        path: '/host/' + domain_name,
-        method: 'GET'
-    };
-
-    const req = https.request(options, res => {
-        res.on('data', d => {
-            const data = JSON.parse(d);
-            process.stdout.write(data.protocol + '://' + data.url);
-        })
-    });
-
-    req.on('error', error => {
-        throw error;
-    });
-
-    req.end();
+    var res = request('GET', 'https://billing-api.vetmanager.cloud/host/' + domain_name);
+    const data = JSON.parse(res.getBody());
+    if(data.success) {
+        return data.protocol + '://' + data.url;
+    } else {
+        throw "Something wrong";
+    }
 };
-
