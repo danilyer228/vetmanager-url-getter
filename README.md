@@ -18,6 +18,6 @@ console.log(vm_url('devtr6')); // output: https://devtr6.vetmanager2.ru
 ```
 or
 ```
-<script src="for_browser/vm-url-getter.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/DaHuJI/vetmanager-url-getter/for_browser/vm-url-getter.min.js"></script>
 <script>alert(getVmUrl('ua')) //output: https://ua.vetmanager.ru</script>
 ```
